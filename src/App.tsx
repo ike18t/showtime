@@ -21,5 +21,5 @@ export default App;
 
 const AppContainer = styled.div`
   margin: 0 auto;
-  width: 800px;
+  max-width: 800px;
 `;

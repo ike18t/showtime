@@ -21,14 +21,22 @@ export const ShowDetails = ({ show }: { show: Show }) => {
   );
 };
 
+const Poster = styled.img``;
 const Container = styled.div`
   display: flex;
 
   & > * {
     margin-right: 25px;
   }
+
+  @media only screen and (max-width: 600px) {
+    ${Poster} {
+      width: 400px;
+      margin: 0px auto;
+    }
+    flex-direction: column;
+  }
 `;
-const Poster = styled.img``;
 const Details = styled.div`
   display: flex;
   flex-direction: column;
