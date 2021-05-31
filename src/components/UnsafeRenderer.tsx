@@ -5,4 +5,4 @@ export const UnsafeRenderer = ({
 }: {
   classNames?: string;
   children: string;
-}) => <span dangerouslySetInnerHTML={{ __html: children.toString() }} />;
+}) => <span dangerouslySetInnerHTML={{ __html: children }} />;
