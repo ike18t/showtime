@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 import styled from "styled-components";
 
 import { useShowSearch } from "../../hooks/useShowSearch";
@@ -12,14 +12,28 @@ export const Search = () => {
   const { setSelectedShow } = useShowSelection();
 
   const searchButtonHandler = () => search(searchText);
+
   const searchInputChangeHandler = ({
     target: { value },
   }: ChangeEvent<HTMLInputElement>) => setSearchText(value);
 
+  const searchInputKeyDownHandler = (
+    event: KeyboardEvent<HTMLInputElement>
+  ) => {
+    if (event.key === "Enter") {
+      const { value } = event.target as HTMLInputElement;
+      setSearchText(value);
+      search(value);
+    }
+  };
+
   return (
     <>
       <SearchContainer>
-        <SearchInput onChange={searchInputChangeHandler} />
+        <SearchInput
+          onChange={searchInputChangeHandler}
+          onKeyDown={searchInputKeyDownHandler}
+        />
         <SearchButton onClick={searchButtonHandler} disabled={!searchText} />
       </SearchContainer>
       {!!shows.length && (
