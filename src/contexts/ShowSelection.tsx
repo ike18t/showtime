@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from "react";
 
-import { Show } from "../types";
+import { Show } from "../models/show";
 
 export const ShowSelectionContext = createContext<{
   selectedShow?: Show;
