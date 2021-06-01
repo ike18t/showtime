@@ -10,7 +10,7 @@ import { ShowDetails } from "./ShowDetails";
 export const Show = () => {
   const { selectedShow, setSelectedShow } = useShowSelection();
 
-  return !!selectedShow ? (
+  return !selectedShow ? null : (
     <Modal isOpen>
       <Close />
       <ReactOutsideClickHandler
@@ -19,7 +19,7 @@ export const Show = () => {
         <ShowDetails show={selectedShow} />
       </ReactOutsideClickHandler>
     </Modal>
-  ) : null;
+  );
 };
 
 const Close = styled.button.attrs({ children: "X" })`
