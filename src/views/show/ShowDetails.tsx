@@ -9,7 +9,7 @@ import { Title } from "../../components/Title";
 export const ShowDetails = ({ show }: { show: Show }) => {
   return (
     <Container>
-      <Poster src={show.image.medium} />
+      {show.image && <Poster src={show.image.medium} />}
       <Details>
         <Title>
           {show.name} ({yearPremiered(show)})

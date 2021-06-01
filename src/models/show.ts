@@ -2,7 +2,7 @@ export type Show = {
   id: number;
   name: string;
   rating: { average: number | null };
-  image: { medium: string; original: string };
+  image: { medium: string; original: string } | null;
   premiered: string | null;
   summary: string;
 };
