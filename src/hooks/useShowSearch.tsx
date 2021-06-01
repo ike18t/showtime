@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { Show } from "../types";
+import { Show } from "../models/show";
 
 const SHOWS_ENDPOINT = "http://api.tvmaze.com/search/shows?q=";
 
@@ -9,7 +9,10 @@ export const useShowSearch = () => {
   const [searchText, setSearchText] = useState<string | undefined>();
 
   useEffect(() => {
-    if (!searchText) return setShows([]);
+    if (!searchText) {
+      setShows([]);
+      return;
+    }
 
     fetch(SHOWS_ENDPOINT + encodeURIComponent(searchText))
       .then((response) => response.json())
