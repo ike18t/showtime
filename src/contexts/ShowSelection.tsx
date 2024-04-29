@@ -12,7 +12,7 @@ export const ShowSelectionProvider = ({
 }: {
   children: JSX.Element[];
 }) => {
-  const [selectedShow, setSelectedShow] = useState<Show | undefined>(undefined);
+  const [selectedShow, setSelectedShow] = useState<Show>();
 
   return (
     <ShowSelectionContext.Provider value={{ selectedShow, setSelectedShow }}>

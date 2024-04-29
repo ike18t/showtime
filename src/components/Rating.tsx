@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const MAX_STARS = 5;
 
-export const Rating = ({ number: rating }: { number: number | null }) => {
+export const Rating = ({ number: rating }: { number?: number }) => {
   const stars = Math.round((rating || 0) / 2);
 
   const starComponents = [

@@ -6,7 +6,7 @@ const SHOWS_ENDPOINT = `${import.meta.env.VITE_API_DOMAIN}/search/shows?q=`;
 
 export const useShowSearch = () => {
   const [shows, setShows] = useState<ReadonlyArray<Show>>([]);
-  const [searchText, setSearchText] = useState<string | undefined>();
+  const [searchText, setSearchText] = useState<string>();
 
   useEffect(() => {
     if (!searchText) {

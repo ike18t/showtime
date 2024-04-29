@@ -1,9 +1,9 @@
 export type Show = {
   id: number;
   name: string;
-  rating: { average: number | null };
-  image: { medium: string; original: string } | null;
-  premiered: string | null;
+  rating: { average?: number };
+  image?: { medium: string; original: string };
+  premiered?: string;
   summary: string;
 };
 
