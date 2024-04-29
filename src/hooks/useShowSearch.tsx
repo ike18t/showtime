@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { Show } from "../models/show";
 
-const SHOWS_ENDPOINT = "http://api.tvmaze.com/search/shows?q=";
+const SHOWS_ENDPOINT = `${import.meta.env.VITE_API_DOMAIN}/search/shows?q=`;
 
 export const useShowSearch = () => {
   const [shows, setShows] = useState<ReadonlyArray<Show>>([]);
